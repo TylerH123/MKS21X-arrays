@@ -40,32 +40,32 @@ public class ArrayDemo{
 				else{
 					vals[i][j] = 1;
 				}
-				System.out.println(vals[i][j]);
 			}
 		}
 	}
 	public static int[][] fill2DCopy(int[][] vals){
-		int[][] newVals = new int[vals.length][vals[0].length];
-		for (int i = 0; i < newVals.length; i++){
-			for (int j = 0; j< newVals[i].length; j++){
-				if (newVals[i][j] < 0){
-					newVals[i][j] = 3;
-				}
-				else{
-					newVals[i][j] = 1;
-				}
-			}
-		}
-		return newVals;
+	  int[][] newVals = new int[vals.length][vals[0].length];
+	  for(int i = 0; i<vals.length; i++){
+	    for(int j = 0; j<vals[i].length; j++){
+	      if (vals[i][j] < 0){
+	        newVals[i][j] = 3;
+	      } else {
+	        newVals[i][j] = 1;
+	      }
+	    }
+	  }
+	  return newVals;
 	}
 	public static void main(String [] args){
 		int[] arr1 = new int[] {0,1,2,3};
 		int[][] arr2 = new int[][] {{0,1,2},{0,0,0}};
-	  int[][] arr3 = new int[][] {{0,1,2},{0,4,5},{9,7,6}};
+	  int[][] arr3 = new int[][] {{1,1,2},{3,4,5},{9,9,10}};
+		int[][] arr4 = new int[][] {{7,1,1},{1,-1,1},{1,1,10}};
 		printArray(arr1);
 		printArray(arr2);
     System.out.println(countZeros2D(arr2));
 		fill2D(arr3);
-    System.out.println(fill2DCopy(arr3));
+		printArray(arr3);
+    printArray(fill2DCopy(arr4));
 	}
 }
